@@ -1,29 +1,224 @@
-.navbar{
-    height: 80px;
-    width: 98%;
-    padding: 0 15px;
-    padding-top: 10px;
-    background-color: yellow;
+.navbar {
+  height: 80px;
+  width:100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s ease;
+  z-index: 1000;
+  position: fixed;
 
-    .logo{
-        height: 80px;
+  &.dark {
+    background-color: rgba(19, 34, 56, 0.9);
+    color: white;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+  }
+
+  &.light {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: black;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: 20px;
+
+    .img img {
+      height: 60px;
+    }
+
+    .name h1 {
+      font-size: 28px;
+      font-weight: bold;
+    }
+  }
+
+  .links {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    margin-right: 100px;
+
+    ul {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      list-style: none;
+
+      li {
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:hover {
+          opacity: 0.7;
+        }
+      }
+
+      .btn {
+        height: 30px;
+        width: 80px;
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+
+        &.light {
+          background-color: #A53DFF;
+          color: white;
+        }
+
+        &.dark {
+          background-color: white;
+          color: #132238;
+        }
+      }
+    }
+
+    .theme {
+      flex-shrink: 0;
+    }
+  }
+
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+
+    span {
+      width: 25px;
+      height: 3px;
+      background: currentColor;
+      transition: 0.3s;
+    }
+
+    &.open span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    &.open span:nth-child(2) {
+      opacity: 0;
+    }
+
+    &.open span:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+  }
+
+  .theme {
+    .change {
+      position: relative;
+      width: 70px;
+      height: 32px;
+      border-radius: 50px;
+      background-color: white;
+      padding: 2px;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 0 6px 1px;
+      transition: background-color 0.3s ease;
+
+      &.dark {
+        background-color: #132238;
+      }
+
+      .icon {
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
         display: flex;
         align-items: center;
-        gap: 10px;
-        overflow: hidden;
-        .img{
-            height: 100%;
-            display: flex;
-            align-items: center;
-            img{
-                height: 80%;
-            }
+        justify-content: center;
+        transition: all 0.3s ease;
+        background-color: #A53DFF;
+
+        img {
+          width: 70%;
+          height: 70%;
         }
-        .name{
-            h1{
-                font-size: 35px;
-                font-weight: bold;
-            }
-        }
+      }
+
+      &.dark .icon {
+        left: calc(100% - 30px);
+      }
+
+      &.light .icon {
+        left: 2px;
+        background-color: #132238;
+      }
     }
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    .hamburger {
+      display: flex;
+      margin-right: 15px;
+
+    }
+
+    .links {
+      position: fixed;
+      top: 80px;
+      left: 0;
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
+      background-color: inherit;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s ease;
+
+      &.open {
+        max-height: 100vh;
+        padding: 20px 0;
+        border-radius: 0 0 30px 30px;
+      }
+
+      ul {
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+        text-align: center;
+      }
+
+      li {
+        width: 100%;
+      }
+
+      .btn {
+        width: 120px;
+        margin: 10px auto;
+      }
+
+      .theme {
+        margin-top: 20px;
+      }
+    }
+  }
+}
+
+@media (min-width: 769px) and (max-width: 855px) {
+  .navbar {
+    .logo {
+      .img {
+        img {
+          height: 40px;
+        }
+      }
+      .name {
+        h1 {
+          font-size: 20px;
+        }
+      }
+    }
+  }
 }
