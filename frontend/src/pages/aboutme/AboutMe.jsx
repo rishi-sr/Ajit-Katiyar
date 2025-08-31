@@ -10,7 +10,7 @@ const AboutMe = ({ theme }) => {
         <div className="details">
           <div className="content">
             <div className="text">
-              <h1>Hello, I'm <br />Ajit Katiyar</h1>
+              <h1>Hello, I'm <br /><span>Ajit Katiyar</span></h1>
               <p>I’m a Generative AI/ML & Data Science Expert based in India. I strive to build intelligent and innovative AI solutions that transform business operations through cutting-edge machine learning, deep learning, and large language models.</p>
               <a href="" download className={`Hello theme ${theme}`}> Say Hello</a>
             </div>

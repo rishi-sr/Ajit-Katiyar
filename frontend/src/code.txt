@@ -1,4 +1,4 @@
 primary color: #A53DFF
 headings: #132238
-para: #333333
+para: #333333, #e2e2e2
 background: white

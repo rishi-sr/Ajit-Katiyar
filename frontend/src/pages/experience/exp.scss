@@ -1,0 +1,141 @@
+.experience{
+    height: 90vh;
+    background-color: #e2e2e2;
+    color: #132238;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    .heading{
+        height: 15vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+
+        h2{
+            font-size: 40px;
+        }
+        .underline{
+            width: 35vh;
+            height: 2px;
+            background-color: #0b1421;
+            box-shadow: 0 0 3px 1px #132238;
+            border-radius: 60px;
+        }
+        p{
+            width: 60%;
+            text-align: center;
+        }
+    }
+    .exp-content{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 75vh;
+        width: 90%;
+        gap: 20px;
+
+
+        .card-exp{
+            width: 60%;
+            background-color: white;
+            height: 60%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 30px;
+            box-shadow: 0 0 10px 1px black;
+
+            .img{
+                width: 40%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                img{
+                    width: 100%;
+                    height: 55%;
+                    
+                }
+            }
+            .details{
+                width: 60%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                padding-right: 20px;
+
+                h3{
+                    font-size: 20px;
+                }
+                p:nth-child(2){
+                    font-size: 10px;
+                    color: grey;
+                    margin-bottom: 10px;
+                }
+                p:nth-child(3){
+                    text-align: justify;
+                    font-size: 14px;
+                }
+            }
+        }
+        .experiences{
+            width: 40%;
+            height: 90%;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            flex-direction: column;
+
+            .exp-body{
+                display: flex;
+                align-items: flex-start;
+                justify-content: center;
+                gap: 20px;
+                
+
+                .part1{
+                    .line{
+                        height: 70px;
+                        width: 2px;
+                        background-color: black;
+                        position: relative;
+
+                        .circle{
+                            height: 10px;
+                            width: 10px;
+                            border-radius: 50%;
+                            background-color: #0b1421;
+                            position: absolute;
+                            top: 20%;
+                            left: 50%;
+                            translate: -50% -50%;
+                        }
+                    }
+
+                }
+                .part2{
+                    display: flex;
+                    flex-direction: column;
+
+                    .det-card{
+                        h3{
+                            font-size: 15px;
+                        }
+                        p{
+                            font-size: 12px;
+                        }
+                    }
+
+                }
+            }
+
+        }
+    }
+}
